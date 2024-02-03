@@ -16,4 +16,4 @@ jobs:
           echo "Process started"
         
       - name : dumping github context
-        run: echo '${{ github.event.issue.user.login }}'
+        run: echo '${{ github.event.issue.user.login }}' >> Readme.md
