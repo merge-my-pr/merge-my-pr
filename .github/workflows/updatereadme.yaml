@@ -14,11 +14,4 @@ jobs:
       - name: Process Started
         run: |
           echo "Process started"
-
-      - name: Fetch Issue Details
-        id: issue-details
-        run: |
-          ISSUE_OWNER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}" \
-            | jq -r '.user.login')
-          echo "::set-output name=owner::$ISSUE_OWNER"
+          echo $github.event.issue.title
