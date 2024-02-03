@@ -12,6 +12,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Process Started
-        run: |
+        run:|
           echo "Process started"
-          echo $github.event.issue.title
+        
+      - name : dumping github context
+         run:|
+            echo '${{ toJSON(github.event) }}'
