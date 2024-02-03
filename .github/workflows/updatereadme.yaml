@@ -16,7 +16,12 @@ jobs:
           echo "Process started"
         
       - name : dumping github context
-        run: echo "${{ github.event.issue.user.login }}" >> Readme.md
+        run: !
+          echo "${{ github.event.issue.user.login }}" >> Readme.md
+          git add .
+          git commit -m "readme"
+          git push
+        
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
 
