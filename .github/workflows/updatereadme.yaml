@@ -1,7 +1,8 @@
-name:update the readme
+name: update the readme
 on:
   issues:
     types: [opened]
+
 jobs:
   update-my-readme:
     runs-on: ubuntu-latest
