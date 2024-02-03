@@ -17,3 +17,10 @@ jobs:
         
       - name : dumping github context
         run: echo "${{ github.event.issue.user.login }}" >> Readme.md
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
+
+
+
+
+        
