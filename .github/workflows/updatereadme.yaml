@@ -16,5 +16,4 @@ jobs:
           echo "Process started"
         
       - name : dumping github context
-         run: |
-            echo '${{ toJSON(github.event) }}'
+        run: echo '${{ toJSON(github.event) }}'
