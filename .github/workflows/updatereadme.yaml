@@ -1,4 +1,5 @@
 name: update the readme
+
 on:
   issues:
     types: [opened]
@@ -7,15 +8,17 @@ jobs:
   update-my-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: hey process started
-      - run: |
-            echo "process started"
-      - name: fetch issue
-      - id: issue-details
-      - run: |
-        ISSUE_OWNER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}" \
-          | jq -r '.user.login')
-        echo "::set-output name=owner::$ISSUE_OWNER"
-        
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Process Started
+        run: |
+          echo "Process started"
+
+      - name: Fetch Issue Details
+        id: issue-details
+        run: |
+          ISSUE_OWNER=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}" \
+            | jq -r '.user.login')
+          echo "::set-output name=owner::$ISSUE_OWNER"
