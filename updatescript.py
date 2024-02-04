@@ -57,20 +57,19 @@ def move_snake(matrix, direction):
     head_row, head_col = -1,-1
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
-            if cell == "HangryHungerHeadUp":
-                head_row, head_col = i, j
+            if cell == "HangryHunger": #[1,3]
+                head_row, head_col = i, j  # head_row =1 ,head_col=3
                 break
-    new_head_row, new_head_col = head_row, head_col
+    new_head_row, new_head_col = head_row, head_col #1,3
     if direction == "UP":
-        new_head_row -= 1
-        new_head_col -= 1
-
+        new_head_row -= 1 #new_head_row=0
+        
         # matrix[3][3] = "HangryHungerHeadUp"
         # matrix[4][3] = "HangryHungerCurvedBody"
         # matrix[4][4] = "HangryHungerTail"
         matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
-        matrix[head_row][head_col] = "HangryHungerTail" 
-        matrix[head_col][new_head_col]="HangryHungerCurvedBody"
+        matrix[head_row][head_col+1] = "HangryHungerTail"  #[1,4]
+        matrix[head_row][head_col]="HangryHungerCurvedBody"
         print("Snake moved up")
     else:
         print("Invalid direction")
