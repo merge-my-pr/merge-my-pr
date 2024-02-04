@@ -20,8 +20,6 @@ def printBoard(matrix):
         markdown_content += f"| {i} | "
         for j, cell in enumerate(row):
             if cell == "HangryHunger":
-                global head_row,head_col
-                head_row, head_col = i, j
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHunger.png) | "
             elif cell == "HangryHungerBody":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHubgerBody.png) | "
@@ -59,7 +57,7 @@ def move_snake(matrix, direction):
         for j, cell in enumerate(row):
             if cell == "HangryHunger": #[1,3]
                 head_row, head_col = i, j
-                print(f"[{head_row}][{head_col}]")# head_row =1 ,head_col=3
+                print(f"[{head_row}][{head_col}]{i}{j}")# head_row =1 ,head_col=3
                 break
     new_head_row, new_head_col = head_row, head_col #1,3
     if direction == "UP":
