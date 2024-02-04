@@ -26,11 +26,11 @@ def printBoard(matrix):
             elif cell == "HangryHungerTail":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerTail.png) | "
             elif cell == "Tile":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png) | "
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/GrayTile.png) | "
             elif cell == "HangryHungerCurvedBody":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/HangryHungerCurvedBody.png)"
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerCurvedBody.png)"
             elif cell == "HangryHungerHeadUp":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/HangryHungerHeadUp.png)"
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerHeadUp.png)"
             else:
                 print("Invalid space")
         markdown_content += "\n"
