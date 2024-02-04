@@ -46,27 +46,23 @@ matrix = [
     ["Tile"] * 7,
 ]
 
-def defaultPosition():
-    matrix[4][3]="HangryHunger"
-    matrix[4][4]="HangryHungerBody"
-    matrix[4][5]="HangryHungerTail"
+matrix[4][3]="HangryHunger"
+matrix[4][4]="HangryHungerBody"
+matrix[4][5]="HangryHungerTail"
 
-
-
-defaultPosition()
 
 issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 
 
-if issue_name =="MOVE|UP":
+if issue_name == "MOVE|UP":
         matrix[3][3]="HangryHungerHeadUp"
         matrix[4][3]="HangryHungerCurvedBody"
         matrix[4][4]="HangryHungerTail"
         print("snake moved up")
         generatedBoard=printBoard(matrix)
-        
+
         with open('Readme.md', 'w') as file:
             file.write(generatedBoard)
 
