@@ -16,10 +16,12 @@ with open(event_path, 'r') as file:
 
 def printBoard(matrix):
     markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 0 | 1 | 2 | 3 | 4 | 5 |\n| - | - | - | - | - | - | - |\n"
+    # head_row , head_col = None, None
     for i, row in enumerate(matrix):
         markdown_content += f"| {i} | "
         for j, cell in enumerate(row):
             if cell == "HangryHunger":
+                head_row, head_col = i, j
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHunger.png) | "
             elif cell == "HangryHungerBody":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHubgerBody.png) | "
@@ -52,12 +54,27 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 def move_snake(matrix, direction):
+    head_row, head_col = None, None
+    for i, row in enumerate(matrix):
+        for j, cell in enumerate(row):
+            if cell == "HangryHungerHeadUp":
+                head_row, head_col = i, j
+                break
+        if head_row is not None:
+            break
+
+    new_head_row, new_head_col = head_row, head_col
     if direction == "UP":
-        matrix[3][3] = "HangryHungerHeadUp"
-        matrix[4][3] = "HangryHungerCurvedBody"
-        matrix[4][4] = "HangryHungerTail"
+            new_head_row -= 1
+
+        # matrix[3][3] = "HangryHungerHeadUp"
+        # matrix[4][3] = "HangryHungerCurvedBody"
+        # matrix[4][4] = "HangryHungerTail"
+
+    if 0 <= new_head_row < len(matrix) and 0 <= new_head_col < len(matrix[0]):
+        matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
+        matrix[head_row][head_col] = "HangryHungerBody"  
         print("Snake moved up")
-    # Add logic for other directions (DOWN, LEFT, RIGHT) here
     else:
         print("Invalid direction")
 
@@ -85,7 +102,7 @@ elif issue_name == "Reset":
     resetSnake(matrix)
     with open('Readme.md', 'r') as file:
             readme_content = file.read()
-            
+
     generatedBoard=printBoard(matrix)
     start_index = readme_content.find("## HELLO THIS IS MERGE")
     end_index = readme_content.find("## Make a move:")
