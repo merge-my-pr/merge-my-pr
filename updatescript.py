@@ -20,6 +20,7 @@ def printBoard(matrix):
         markdown_content += f"| {i} | "
         for j, cell in enumerate(row):
             if cell == "HangryHunger":
+                global head_row,head_col
                 head_row, head_col = i, j
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHunger.png) | "
             elif cell == "HangryHungerBody":
