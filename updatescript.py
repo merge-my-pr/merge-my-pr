@@ -40,12 +40,12 @@ def printBoard(matrix):
 
 
 matrix = [
-    ["Tile"] * 6,
-    ["Tile"] * 6,
-    ["Tile"] * 6,
-    ["Tile"] * 6,
-    ["Tile"] * 6,
-    ["Tile"] * 6,
+    ["Tile"] * 5,
+    ["Tile"] * 5,
+    ["Tile"] * 5,
+    ["Tile"] * 5,
+    ["Tile"] * 5,
+    ["Tile"] * 5,
 ]
 
 
