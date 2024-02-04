@@ -14,4 +14,3 @@ jobs:
       - name: Process Started
         run: |
           echo "Process started"
-          echo $github.event.issue.title
