@@ -71,8 +71,6 @@ def move_snake(matrix, direction):
         # matrix[3][3] = "HangryHungerHeadUp"
         # matrix[4][3] = "HangryHungerCurvedBody"
         # matrix[4][4] = "HangryHungerTail"
-
-    if 0 <= new_head_row < len(matrix) and 0 <= new_head_col < len(matrix[0]):
         matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
         matrix[head_row][head_col] = "HangryHungerBody"  
         print("Snake moved up")
