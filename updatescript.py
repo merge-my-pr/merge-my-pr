@@ -16,7 +16,6 @@ with open(event_path, 'r') as file:
 
 def printBoard(matrix):
     markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 0 | 1 | 2 | 3 | 4 | 5 |\n| - | - | - | - | - | - | - |\n"
-    # head_row , head_col = None, None
     for i, row in enumerate(matrix):
         markdown_content += f"| {i} | "
         for j, cell in enumerate(row):
@@ -61,6 +60,7 @@ def move_snake(matrix, direction):
                 head_row, head_col = i, j  # head_row =1 ,head_col=3
                 break
     new_head_row, new_head_col = head_row, head_col #1,3
+    print(f"[{head_row}][{head_col}]")
     if direction == "UP":
         new_head_row -= 1 #new_head_row=0
         
