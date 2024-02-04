@@ -22,7 +22,7 @@
 [LEFT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20left%20.&title=Move|LEFT)   👈
 
 [RIGHT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20right%20.&title=Move|RIGHT)   👉
-
+[RESET](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20reset%20.&title=Reset)
 
 
 Note:

@@ -47,6 +47,7 @@ matrix = [
 ]
 
 
+
 issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
@@ -60,12 +61,17 @@ def move_snake(matrix, direction):
     else:
         print("Invalid direction")
 
+def resetSnake(matrix):
+    matrix[5][3]="HangryHunger"
+    matrix[5][4]="HangryHungerBody"
+    matrix[5][5]="HangryHungerTail"
+
+
 if issue_name == "Move|UP":
         move_snake(matrix,"UP")
         with open('Readme.md', 'r') as file:
             readme_content = file.read()
 
-        
         generatedBoard=printBoard(matrix)
         start_index = readme_content.find("## HELLO THIS IS MERGE")
         end_index = readme_content.find("## Make a move:")
@@ -74,7 +80,19 @@ if issue_name == "Move|UP":
 
         with open('Readme.md', 'w') as file:
             file.write(updated_readme_content)
-else:
-    pass
+
+elif issue_name == "Reset":
+    resetSnake(matrix)
+    with open('Readme.md', 'r') as file:
+            readme_content = file.read()
+            
+    generatedBoard=printBoard(matrix)
+    start_index = readme_content.find("## HELLO THIS IS MERGE")
+    end_index = readme_content.find("## Make a move:")
+    updated_readme_content = readme_content[:start_index] + generatedBoard + readme_content[end_index:]
+
+    with open('Readme.md', 'w') as file:
+        file.write(updated_readme_content)
+
 
 print("done")
