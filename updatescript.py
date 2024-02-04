@@ -33,24 +33,7 @@ def printBoard(matrix):
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/HangryHungerHeadUp.png)"
             else:
                 print("Invalid space")
-        markdown_content += """\n
-                            ## Make a move:
-                            
-
-                            [UP](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20up%20.&title=Move|UP)   ☝  
-
-                            [DOWN](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20down%20.&title=Move|DOWN)    👇
-
-                            [LEFT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20left%20.&title=Move|LEFT)   👈
-
-                            [RIGHT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20right%20.&title=Move|RIGHT)   👉
-
-
-
-                            Note:
-                            &nbsp;The move will be rejected if its illegal.
-                            hellow merge-my-pr\n
-                            """
+        markdown_content += "\n"
     return markdown_content
 
 
