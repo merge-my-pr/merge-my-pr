@@ -1,13 +1,7 @@
-<h2>HELLO THIS IS MERGE</h2>
-
-merge-my-pr
-Ronak-Ronu
-
-<br/>
-<img src="https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png" height="50" width="50">
+## HELLO THIS IS MERGE
 
 
-Hey Lets Play :
+## Hey Lets Play :
 
 |   | A | B | C | D | E | F |
 | - | - | - | - | - | - | - |
@@ -18,5 +12,16 @@ Hey Lets Play :
 | 5 | ![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png) | ![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)
 | 6 | ![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png) | ![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)|![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png)
 
-Moves:
+## Make a move:
+ 
+[UP](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20up%20.&title=Move|UP)   ☝  
+
+[DOWN](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20down%20.&title=Move|)    👇
+
+[LEFT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20left%20.&title=Move|LEFT)   👈
+
+[RIGHT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20right%20.&title=Move|RIGHT)   👉
+
+
+
 
