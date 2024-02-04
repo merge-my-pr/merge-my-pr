@@ -52,13 +52,6 @@ def defaultPosition():
     matrix[4][5]="HangryHungerTail"
 
 
-def moveSnake(direction):
-    defaultPosition()
-    if direction == "MOVE|UP":
-        matrix[3][3]="HangryHungerHeadUp"
-        matrix[4][3]="HangryHungerCurvedBody"
-        matrix[4][4]="HangryHungerTail"
-
 
 defaultPosition()
 
@@ -68,9 +61,11 @@ issue_name =event_data['issue']['title']
 
 
 if issue_name =="MOVE|UP":
-        moveSnake(issue_name)
-
-generatedBoard=printBoard(matrix)
+        matrix[3][3]="HangryHungerHeadUp"
+        matrix[4][3]="HangryHungerCurvedBody"
+        matrix[4][4]="HangryHungerTail"
+        print("snake moved up")
+        generatedBoard=printBoard(matrix)
 
 
 with open('Readme.md', 'w') as file:
