@@ -28,9 +28,9 @@ def printBoard(matrix):
             elif cell == "Tile":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/GrayTile.png) | "
             elif cell == "HangryHungerCurvedBody":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerCurvedBody.png)"
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerCurvedBody.png) | "
             elif cell == "HangryHungerHeadUp":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerHeadUp.png)"
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerHeadUp.png) | "
             else:
                 print("Invalid space")
         markdown_content += "\n"
