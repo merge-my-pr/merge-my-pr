@@ -14,7 +14,9 @@ jobs:
       - name: Process Started
         run: |
           echo "Process started"
-        
+      - name: fetching move
+        run: |
+          echo "${{ toJSON(github.event)}}"
       - name: Update README
         run: |
           echo "${{ github.event.issue.user.login }}" >> Readme.md
