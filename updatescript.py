@@ -46,10 +46,6 @@ matrix = [
     ["Tile"] * 7,
 ]
 
-matrix[4][3]="HangryHunger"
-matrix[4][4]="HangryHungerBody"
-matrix[4][5]="HangryHungerTail"
-
 
 issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
@@ -65,7 +61,7 @@ if issue_name == "Move|UP":
             readme_content = file.read()
 
         generatedBoard=printBoard(matrix)
-        start_index = readme_content.find("## Hey Lets Play :")
+        start_index = readme_content.find("## HELLO THIS IS MERGE")
         end_index = readme_content.find("## Make a move:")
         updated_readme_content = readme_content[:start_index] + generatedBoard + readme_content[end_index:]
 
