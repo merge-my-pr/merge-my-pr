@@ -8,6 +8,12 @@ event_path = os.getenv('GITHUB_EVENT_PATH')
 if not event_path:
     print("GitHub event data not found.")
     exit(1)
+
+
+with open(event_path, 'r') as file:
+    event_data = json.load(file)
+
+
 def printBoard(matrix):
     markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n| - | - | - | - | - | - | - |\n"
     for i, row in enumerate(matrix):
@@ -21,9 +27,30 @@ def printBoard(matrix):
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerTail.png) | "
             elif cell == "Tile":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/GrayTile.png) | "
+            elif cell == "HangryHungerCurvedBody":
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/HangryHungerCurvedBody.png)"
+            elif cell == "HangryHungerHeadUp":
+                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/7311931b11cdacc8bb992244a5bb4aedbd8520a3/files/HangryHungerHeadUp.png)"
             else:
                 print("Invalid space")
-        markdown_content += "\n"
+        markdown_content += """\n
+                            ## Make a move:
+                            
+
+                            [UP](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20up%20.&title=Move|UP)   ☝  
+
+                            [DOWN](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20down%20.&title=Move|DOWN)    👇
+
+                            [LEFT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20left%20.&title=Move|LEFT)   👈
+
+                            [RIGHT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20right%20.&title=Move|RIGHT)   👉
+
+
+
+                            Note:
+                            &nbsp;The move will be rejected if its illegal.
+                            hellow merge-my-pr\n
+                            """
     return markdown_content
 
 
@@ -36,24 +63,32 @@ matrix = [
     ["Tile"] * 7,
 ]
 
-
-matrix[4][3]="HangryHunger"
-matrix[4][4]="HangryHungerBody"
-matrix[4][5]="HangryHungerTail"
-
-
-generatedBoard=printBoard(matrix)
+def defaultPosition():
+    matrix[4][3]="HangryHunger"
+    matrix[4][4]="HangryHungerBody"
+    matrix[4][5]="HangryHungerTail"
 
 
-with open(event_path, 'r') as file:
-    event_data = json.load(file)
+def moveSnake(direction):
+    defaultPosition()
+    if direction == "MOVE|UP":
+        matrix[3][3]="HangryHungerHeadUp"
+        matrix[4][3]="HangryHungerCurvedBody"
+        matrix[4][4]="HangryHungerTail"
 
+
+defaultPosition()
 
 issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
-if issue_name=="MOVE|UP":
-        pass  
+
+
+if issue_name =="MOVE|UP":
+        moveSnake(issue_name)
+
+generatedBoard=printBoard(matrix)
+
 
 with open('Readme.md', 'w') as file:
     file.write(generatedBoard)
