@@ -39,12 +39,12 @@ def printBoard(matrix):
 
 
 matrix = [
-    ["Tile"] * 5,
-    ["Tile"] * 5,
-    ["Tile"] * 5,
-    ["Tile"] * 5,
-    ["Tile"] * 5,
-    ["Tile"] * 5,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
 ]
 
 
@@ -53,7 +53,6 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 def move_snake(matrix, direction):
-    head_row, head_col = -1,-1
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHunger": #[1,3]
