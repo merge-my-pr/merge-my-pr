@@ -29,12 +29,12 @@ def printBoard(matrix):
      return markdown_content
 
 matrix = [
-    ["GrayTile"] * 7,
-    ["GrayTile"] * 7,
-    ["GrayTile"] * 7,
-    ["GrayTile"] * 7,
-    ["GrayTile"] * 7,
-    ["GrayTile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
+    ["Tile"] * 7,
 ]
 
 
