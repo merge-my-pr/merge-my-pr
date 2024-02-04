@@ -43,8 +43,8 @@ matrix = [
     ["Tile"] * 7,
     ["Tile"] * 7,
     ["Tile"] * 7,
-    ["Tile"] * 7,
-    ["Tile"] * 7,
+    ["Tile"] * 4,["HangryHunger"],["HangryHungerBody"],["HangryHungerTail"],
+    ["Tile"] * 7
     ["Tile"] * 7,
 ]
 
@@ -54,7 +54,7 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 def move_snake(matrix, direction):
-    head_row, head_col = -1,-1
+    head_row, head_col = 0,0
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHungerHeadUp":
@@ -96,6 +96,7 @@ if issue_name == "Move|UP":
 
         with open('Readme.md', 'w') as file:
             file.write(updated_readme_content)
+
 
 elif issue_name == "Reset":
     resetSnake(matrix)
