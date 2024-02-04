@@ -38,7 +38,7 @@ def printBoard(matrix):
 
 matrix = [
     ["Tile"] * 7,
-    ["Tile"] * 7,
+    ["Tile"] * 2,["HangryHunger"],["HangryHungerBody"],["HangryHungerTail"],
     ["Tile"] * 7,
     ["Tile"] * 7,
     ["Tile"] * 7,
