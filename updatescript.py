@@ -72,7 +72,7 @@ def move_snake(matrix, direction):
         # matrix[4][4] = "HangryHungerTail"
         matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
         matrix[head_row][head_col+1] = "HangryHungerTail" 
-        matrix[head_row][head_col] = "Tile" #[1,4]
+        matrix[head_row][head_col+2] = "Tile" 
         matrix[head_row][head_col]="HangryHungerCurvedBody"
         print("Snake moved up")
     else:
