@@ -11,14 +11,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Process Started
-        run: |
-          echo "Process started"
       - name: fetching move
         run: |
           echo '${{ toJSON(github.event) }}'
+        
       - name: run python script
         run: python updatescript.py
+      
+      
       - name: Update README
         run: |
           # echo "${{ github.event.issue.user.login }}" >> Readme.md

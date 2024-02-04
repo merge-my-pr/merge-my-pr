@@ -71,7 +71,7 @@ def move_snake(matrix, direction):
         # matrix[4][3] = "HangryHungerCurvedBody"
         # matrix[4][4] = "HangryHungerTail"
         matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
-        matrix[head_row][head_col] = "HangryHungerTail"  #[1,4]
+        matrix[head_row][head_col+1] = "HangryHungerTail"  #[1,4]
         matrix[head_row][head_col]="HangryHungerCurvedBody"
         print("Snake moved up")
     else:
@@ -96,7 +96,6 @@ if issue_name == "Move|UP":
 
         with open('Readme.md', 'w') as file:
             file.write(updated_readme_content)
-
 
 elif issue_name == "Reset":
     resetSnake(matrix)
