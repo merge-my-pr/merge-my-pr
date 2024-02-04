@@ -13,7 +13,7 @@ with open(event_path, 'r') as file:
 issue_author = event_data['issue']['user']['login']
 
 
-with open('README.md', 'a') as file:
-    file.write(issue_author)
+with open('../Readme.md', 'a') as file:
+    file.write(f"hellow {issue_author}\n")
 
 print("done")

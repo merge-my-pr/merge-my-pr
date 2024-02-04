@@ -21,7 +21,7 @@ jobs:
         run: python .github/workflows/updatescript.py
       - name: Update README
         run: |
-          echo "${{ github.event.issue.user.login }}" >> Readme.md
+          # echo "${{ github.event.issue.user.login }}" >> Readme.md
           git config --local user.email github-actions[bot]
           git config --local user.name  github-actions[bot]@users.noreply.github.com
           git add Readme.md
