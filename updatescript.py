@@ -54,25 +54,23 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 def move_snake(matrix, direction):
-    head_row, head_col = 0,0
+    head_row, head_col = -1,-1
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHungerHeadUp":
                 head_row, head_col = i, j
                 break
-        if head_row != -1:
-            break
-        else:
-            print("snake head not found")
     new_head_row, new_head_col = head_row, head_col
     if direction == "UP":
         new_head_row -= 1
+        new_head_col -= 1
 
         # matrix[3][3] = "HangryHungerHeadUp"
         # matrix[4][3] = "HangryHungerCurvedBody"
         # matrix[4][4] = "HangryHungerTail"
         matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
-        matrix[head_row][head_col] = "HangryHungerBody"  
+        matrix[head_row][head_col] = "HangryHungerCurvedBody" 
+        matrix[head_col][new_head_col]="HangryHungerTail"
         print("Snake moved up")
     else:
         print("Invalid direction")
