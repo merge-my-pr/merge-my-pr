@@ -15,9 +15,9 @@ with open(event_path, 'r') as file:
 
 
 def printBoard(matrix):
-    markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n| - | - | - | - | - | - | - |\n"
+    markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 0 | 1 | 2 | 3 | 4 | 5 |\n| - | - | - | - | - | - | - |\n"
     for i, row in enumerate(matrix):
-        markdown_content += f"| {i+1} | "
+        markdown_content += f"| {i} | "
         for j, cell in enumerate(row):
             if cell == "HangryHunger":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHunger.png) | "
