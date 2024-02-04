@@ -38,13 +38,16 @@ def printBoard(matrix):
 
 matrix = [
     ["Tile"] * 7,
-    ["Tile"] * 2,["HangryHunger"],["HangryHungerBody"],["HangryHungerTail"],
+    ["Tile"] * 7,
     ["Tile"] * 7,
     ["Tile"] * 7,
     ["Tile"] * 7,
     ["Tile"] * 7,
 ]
 
+matrix[1][3]="HangryHunger"
+matrix[1][4]="HangryHungerBody"
+matrix[1][5]="HangryHungerTail"
 
 
 issue_author = event_data['issue']['user']['login']
@@ -59,6 +62,7 @@ def move_snake(matrix, direction):
                 head_row, head_col = i, j
                 print(f"[{head_row}][{head_col}]{i}{j}")# head_row =1 ,head_col=3
                 break
+
     new_head_row, new_head_col = head_row, head_col #1,3
     if direction == "UP":
         new_head_row -= 1 #new_head_row=0
@@ -67,7 +71,7 @@ def move_snake(matrix, direction):
         # matrix[4][3] = "HangryHungerCurvedBody"
         # matrix[4][4] = "HangryHungerTail"
         matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
-        matrix[head_row][head_col+1] = "HangryHungerTail"  #[1,4]
+        matrix[head_row][head_col] = "HangryHungerTail"  #[1,4]
         matrix[head_row][head_col]="HangryHungerCurvedBody"
         print("Snake moved up")
     else:
