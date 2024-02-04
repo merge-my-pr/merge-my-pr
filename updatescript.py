@@ -13,7 +13,6 @@ if not event_path:
 with open(event_path, 'r') as file:
     event_data = json.load(file)
 
-head_row, head_col=-1,-1
 def printBoard(matrix):
     markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 0 | 1 | 2 | 3 | 4 | 5 |\n| - | - | - | - | - | - | - |\n"
     for i, row in enumerate(matrix):
@@ -52,7 +51,8 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 def move_snake(matrix, direction):
-    global head_row, head_col
+    head_row, head_col=-1,-1
+
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHunger": #[1,3]
