@@ -54,6 +54,7 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 def move_snake(matrix, direction):
+    global head_row, head_col
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHunger": #[1,3]
