@@ -66,9 +66,8 @@ if issue_name =="MOVE|UP":
         matrix[4][4]="HangryHungerTail"
         print("snake moved up")
         generatedBoard=printBoard(matrix)
-
-
-with open('Readme.md', 'w') as file:
-    file.write(generatedBoard)
+        
+        with open('Readme.md', 'w') as file:
+            file.write(generatedBoard)
 
 print("done")
