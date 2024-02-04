@@ -55,8 +55,7 @@ issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
 
-
-if issue_name == "MOVE|UP":
+if issue_name == "Move|UP":
         matrix[3][3]="HangryHungerHeadUp"
         matrix[4][3]="HangryHungerCurvedBody"
         matrix[4][4]="HangryHungerTail"
