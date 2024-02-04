@@ -60,9 +60,17 @@ if issue_name == "Move|UP":
         matrix[4][3]="HangryHungerCurvedBody"
         matrix[4][4]="HangryHungerTail"
         print("snake moved up")
+
+        with open('Readme.md', 'r') as file:
+            readme_content = file.read()
+
         generatedBoard=printBoard(matrix)
+        start_index = readme_content.find("## Hey Lets Play :")
+        end_index = readme_content.find("## Make a move:")
+        updated_readme_content = readme_content[:start_index] + generatedBoard + readme_content[end_index:]
+
 
         with open('Readme.md', 'w') as file:
-            file.write(generatedBoard)
+            file.write(updated_readme_content)
 
 print("done")
