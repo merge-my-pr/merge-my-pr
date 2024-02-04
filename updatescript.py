@@ -78,9 +78,9 @@ def move_snake(matrix, direction):
         print("Invalid direction")
 
 def resetSnake(matrix):
-    matrix[5][3]="HangryHunger"
-    matrix[5][4]="HangryHungerBody"
-    matrix[5][5]="HangryHungerTail"
+    matrix[1][3]="HangryHunger"
+    matrix[1][4]="HangryHungerBody"
+    matrix[1][5]="HangryHungerTail"
 
 
 if issue_name == "Move|UP":
