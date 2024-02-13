@@ -67,8 +67,10 @@ def move_snake(matrix):
                     # matrix[new_head_row][head_col]="HangryHunger"
                     # matrix[head_row][head_col]="Tile"
                 print("Snake moved up")
+                break
             else:
                 print("Invalid direction")
+                break
 
 def resetHunger(matrix):
     matrix[1][3]="HangryHunger"
