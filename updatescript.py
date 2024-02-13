@@ -54,7 +54,7 @@ def move_snake(matrix):
 
     # new_head_row, new_head_col = head_row, head_col #1,3
     # if direction == "UP":
-        new_head_row -= 1 #new_head_row=0
+        # new_head_row -= 1 #new_head_row=0
         
         # matrix[3][3] = "HangryHungerHeadUp"
         # matrix[4][3] = "HangryHungerCurvedBody"
