@@ -12,7 +12,7 @@ with open(event_path, 'r') as file:
     event_data = json.load(file)
 
 def printBoard(matrix):
-    markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 0 | 1 | 2 | 3 |\n| - | - | - | - |\n"
+    markdown_content = "## HELLO THIS IS MERGE\n## Hey Lets Play :\n|   | 0 | 1 | 2 | 3 |\n| - | - | - | - | - |\n"
     for i, row in enumerate(matrix):
         markdown_content += f"| {i} | "
         for j, cell in enumerate(row):
