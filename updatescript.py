@@ -1,12 +1,10 @@
 import os
 import json
 
-
 event_path = os.getenv('GITHUB_EVENT_PATH')
 
-
 if not event_path:
-    print("GitHub event data not found.")
+    print("GitHub event data not found")
     exit(1)
 
 
@@ -20,16 +18,8 @@ def printBoard(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHunger":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHunger.png) | "
-            elif cell == "HangryHungerBody":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHubgerBody.png) | "
-            elif cell == "HangryHungerTail":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerTail.png) | "
             elif cell == "Tile":
                 markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/GrayTile.png) | "
-            elif cell == "HangryHungerCurvedBody":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerCurvedBody.png) | "
-            elif cell == "HangryHungerHeadUp":
-                markdown_content += "![](https://github.com/merge-my-pr/merge-my-pr/blob/main/files/HangryHungerHeadUp.png) | "
             else:
                 print("Invalid space")
         markdown_content += "\n"
@@ -40,15 +30,10 @@ matrix = [
     ["Tile"] * 7,
     ["Tile"] * 7,
     ["Tile"] * 7,
-    ["Tile"] * 7,
-    ["Tile"] * 7,
-    ["Tile"] * 7,
+    ["Tile"] * 7
 ]
 
 matrix[1][3]="HangryHunger"
-matrix[1][4]="HangryHungerBody"
-matrix[1][5]="HangryHungerTail"
-
 
 issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
@@ -70,19 +55,18 @@ def move_snake(matrix, direction):
         # matrix[3][3] = "HangryHungerHeadUp"
         # matrix[4][3] = "HangryHungerCurvedBody"
         # matrix[4][4] = "HangryHungerTail"
-        matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
-        matrix[head_row][head_col+1] = "HangryHungerTail" 
-        matrix[head_row][head_col+2] = "Tile" 
-        matrix[head_row][head_col]="HangryHungerCurvedBody"
+        # matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
+        # matrix[head_row][head_col+1] = "HangryHungerTail" 
+        # matrix[head_row][head_col+2] = "Tile" 
+        # matrix[head_row][head_col]="HangryHungerCurvedBody"
+        matrix[new_head_row][new_head_col]="HangryHunger"
+        matrix[head_row][head_col]="Tile"
         print("Snake moved up")
     else:
         print("Invalid direction")
 
-def resetSnake(matrix):
+def resetHunger(matrix):
     matrix[1][3]="HangryHunger"
-    matrix[1][4]="HangryHungerBody"
-    matrix[1][5]="HangryHungerTail"
-
 
 if issue_name == "Move|UP":
         move_snake(matrix,"UP")
@@ -99,7 +83,7 @@ if issue_name == "Move|UP":
             file.write(updated_readme_content)
 
 elif issue_name == "Reset":
-    resetSnake(matrix)
+    resetHunger(matrix)
     with open('Readme.md', 'r') as file:
             readme_content = file.read()
 
