@@ -50,25 +50,25 @@ def move_snake(matrix):
                 # new_head_row -= 1
                 matrix[i][j]="Tile"     
                 print(i,j)          
-                matrix[i][j-1]="HangryHunger"
-                break
+                matrix[j-1][i]="HangryHunger"
+                print(i,j)          
 
-    # new_head_row, new_head_col = head_row, head_col #1,3
-    # if direction == "UP":
-        # new_head_row -= 1 #new_head_row=0
-        
-        # matrix[3][3] = "HangryHungerHeadUp"
-        # matrix[4][3] = "HangryHungerCurvedBody"
-        # matrix[4][4] = "HangryHungerTail"
-        # matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
-        # matrix[head_row][head_col+1] = "HangryHungerTail" 
-        # matrix[head_row][head_col+2] = "Tile" 
-        # matrix[head_row][head_col]="HangryHungerCurvedBody"
-        # matrix[new_head_row][head_col]="HangryHunger"
-        # matrix[head_row][head_col]="Tile"
-        print("Snake moved up")
-    else:
-        print("Invalid direction")
+                # new_head_row, new_head_col = head_row, head_col #1,3
+                # if direction == "UP":
+                    # new_head_row -= 1 #new_head_row=0
+                    
+                    # matrix[3][3] = "HangryHungerHeadUp"
+                    # matrix[4][3] = "HangryHungerCurvedBody"
+                    # matrix[4][4] = "HangryHungerTail"
+                    # matrix[new_head_row][new_head_col] = "HangryHungerHeadUp"
+                    # matrix[head_row][head_col+1] = "HangryHungerTail" 
+                    # matrix[head_row][head_col+2] = "Tile" 
+                    # matrix[head_row][head_col]="HangryHungerCurvedBody"
+                    # matrix[new_head_row][head_col]="HangryHunger"
+                    # matrix[head_row][head_col]="Tile"
+                print("Snake moved up")
+            else:
+                print("Invalid direction")
 
 def resetHunger(matrix):
     matrix[1][3]="HangryHunger"
