@@ -73,7 +73,7 @@ def resetHunger(matrix):
     matrix[1][3]="HangryHunger"
 
 if issue_name == "Move|UP":
-        move_snake(matrix,"UP")
+        move_snake(matrix)
         with open('Readme.md', 'r') as file:
             readme_content = file.read()
 
