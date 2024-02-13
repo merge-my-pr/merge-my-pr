@@ -38,18 +38,22 @@ matrix[1][3]="HangryHunger"
 issue_author = event_data['issue']['user']['login']
 issue_name =event_data['issue']['title']
 
-def move_snake(matrix, direction):
-    head_row, head_col=-1,-1
+def move_snake(matrix):
+    # head_row, head_col=-1,-1
 
     for i, row in enumerate(matrix):
         for j, cell in enumerate(row):
             if cell == "HangryHunger": #[1,3]
-                head_row, head_col = i, j
-                print(f"[{head_row}][{head_col}]{i}{j}")# head_row =1 ,head_col=3
+                # head_row, head_col = i, j
+                # print(f"[{head_row}][{head_col}]{i}{j}")# head_row =1 ,head_col=3
+                # new_head_row, new_head_col = head_row, head_col #1,3
+                # new_head_row -= 1
+                matrix[i][j]="Tile"               
+                matrix[i-1][j]="HangryHunger"
                 break
 
-    new_head_row, new_head_col = head_row, head_col #1,3
-    if direction == "UP":
+    # new_head_row, new_head_col = head_row, head_col #1,3
+    # if direction == "UP":
         new_head_row -= 1 #new_head_row=0
         
         # matrix[3][3] = "HangryHungerHeadUp"
@@ -59,8 +63,8 @@ def move_snake(matrix, direction):
         # matrix[head_row][head_col+1] = "HangryHungerTail" 
         # matrix[head_row][head_col+2] = "Tile" 
         # matrix[head_row][head_col]="HangryHungerCurvedBody"
-        matrix[new_head_row][new_head_col]="HangryHunger"
-        matrix[head_row][head_col]="Tile"
+        # matrix[new_head_row][head_col]="HangryHunger"
+        # matrix[head_row][head_col]="Tile"
         print("Snake moved up")
     else:
         print("Invalid direction")
