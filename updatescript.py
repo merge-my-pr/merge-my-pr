@@ -48,7 +48,8 @@ def move_snake(matrix):
                 # print(f"[{head_row}][{head_col}]{i}{j}")# head_row =1 ,head_col=3
                 # new_head_row, new_head_col = head_row, head_col #1,3
                 # new_head_row -= 1
-                matrix[i][j]="Tile"               
+                matrix[i][j]="Tile"     
+                print(i,j)          
                 matrix[i-1][j]="HangryHunger"
                 break
 
