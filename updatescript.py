@@ -50,7 +50,7 @@ def move_snake(matrix):
                 # new_head_row -= 1
                 matrix[i][j]="Tile"     
                 print(i,j)          
-                matrix[i-1][j]="HangryHunger"
+                matrix[i][j-1]="HangryHunger"
                 break
 
     # new_head_row, new_head_col = head_row, head_col #1,3
