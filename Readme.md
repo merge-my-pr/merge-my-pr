@@ -1,1 +1,1 @@
-[View 3D Model](ImageToStl.com_map.stl)
+[View Interactive Model](ImageToStl.com_map.stl)
