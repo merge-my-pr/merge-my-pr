@@ -18,6 +18,40 @@
 [RIGHT](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20right%20.&title=Move|RIGHT)   👉
 [RESET](https://github.com/merge-my-pr/merge-my-pr/issues/new?body=This%20will%20move%20the%20angry%20hunger%20reset%20.&title=Reset)
 
+```stl
+solid cube_corner
+  facet normal 0.0 -1.0 0.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 1.0 0.0 0.0
+      vertex 0.0 0.0 1.0
+    endloop
+  endfacet
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 0.0 1.0 0.0
+      vertex 1.0 0.0 0.0
+    endloop
+  endfacet
+  facet normal -1.0 0.0 0.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 0.0 0.0 1.0
+      vertex 0.0 1.0 0.0
+    endloop
+  endfacet
+  facet normal 0.577 0.577 0.577
+    outer loop
+      vertex 1.0 0.0 0.0
+      vertex 0.0 1.0 0.0
+      vertex 0.0 0.0 1.0
+    endloop
+  endfacet
+endsolid
+```
+
+
 
 Note:
 &nbsp;The move will be rejected if its illegal.
