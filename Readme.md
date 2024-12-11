@@ -1,6 +1,7 @@
 See something cool by clicking below 3d stl model file
 [View Interactive Model](ImageToStl.com_map.stl)
 
+```stl
 solid face_structure
   facet normal 0 0 1
     outer loop
@@ -31,3 +32,4 @@ solid face_structure
     endloop
   endfacet
 endsolid face_structure
+```
